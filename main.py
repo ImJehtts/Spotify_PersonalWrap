@@ -11,6 +11,7 @@ customtkinter.set_default_color_theme("green")
 window = customtkinter.CTk()
 window.geometry("900x750")
 window.title("Spotify Wrapped Project")
+window.resizable(False, False)
 
 time_option = customtkinter.StringVar(value = "short_term")
 number_of_songs = customtkinter.StringVar(value = "10")
