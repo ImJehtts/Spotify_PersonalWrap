@@ -9,21 +9,16 @@ customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("green")
 
 window = customtkinter.CTk()
-window.geometry("900x750")
+window.geometry("990x750")
 window.title("Spotify Wrapped Project")
 window.resizable(False, False)
 
 time_option = customtkinter.StringVar(value = "short_term")
 number_of_songs = customtkinter.StringVar(value = "10")
 
-songs_scroll_frame = customtkinter.CTkScrollableFrame(window,height = 500, width = 850)
+songs_scroll_frame = customtkinter.CTkScrollableFrame(window,height = 500, width = 930)
 
 dictionary_of_songs = {}
-
-
-#def log_out():
-#   webbrowser.open("https://www.spotify.com/fr/logout")
-#If I ever want to add this
 
 def clear_label(area):
    for label in area.winfo_children():\
@@ -79,7 +74,7 @@ def update_songs(time_option_picked,song_number):
 
 title_label = customtkinter.CTkLabel(window,text="Spotify Wrapped Project", text_color="green",font=("Times New Roman", 30))
 
-update_songs("long_term","10")
+update_songs("short_term","10")
 
 options_of_time = customtkinter.CTkOptionMenu(master = window,values=["short_term","medium_term","long_term"],command=lambda value: update_songs(value,number_of_songs.get()), variable=time_option, font=("Times New Roman", 25), width = 100, height = 45)
 number_of_songs_shown = customtkinter.CTkOptionMenu(master = window,values=["5","10","15","20","25"],command=lambda value: update_songs(time_option.get(), value), variable=number_of_songs, font=("Times New Roman", 25), width = 100, height = 45)
@@ -87,11 +82,11 @@ number_of_songs_shown = customtkinter.CTkOptionMenu(master = window,values=["5",
 time_choice_label = customtkinter.CTkLabel(window,text="Time Period", text_color="green",font=("Times New Roman", 25))
 song_number_label = customtkinter.CTkLabel(window,text="# of Songs", text_color="green",font=("Times New Roman", 25))
 
-title_label.place(x=300, y = 25)
-options_of_time.place(x=215,y=125)
-time_choice_label.place(x=215,y=85)
-number_of_songs_shown.place(x=510,y=125)
-song_number_label.place(x=510,y=85)
+title_label.place(x=360, y = 25)
+options_of_time.place(x=315,y=125)
+time_choice_label.place(x=315,y=85)
+number_of_songs_shown.place(x=610,y=125)
+song_number_label.place(x=610,y=85)
 songs_scroll_frame.place(x=20,y=200)
 
 
